@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import profilePic from "../images/pfp.webp";
+import { BsPerson } from "react-icons/bs";
 
 const style = {
   wrapper: `h-16 w-full bg-black text-white flex md:justify-around items-center px-60 fixed z-20`,
@@ -29,9 +30,22 @@ const Navbar = () => {
         <div className={style.menuItem}>Help</div>
         <div className={style.menuItem}>Eric</div>
         <div className={style.userImageContainer}>
-          <Image src={profilePic} width={40} height={40} alt={""} />
+          <Image
+            className={style.userImage}
+            src={profilePic}
+            width={40}
+            height={40}
+            alt={""}
+          />
         </div>
-        {currentAccount ? <div>0x0000.0000</div> : <div>please log in</div>}
+        {currentAccount ? (
+          <div>0x0000.0000</div>
+        ) : (
+          <div className={style.loginButton}>
+            <BsPerson></BsPerson>
+            <span className={style.loginText}>please log in</span>
+          </div>
+        )}
       </div>
     </div>
   );
