@@ -1,3 +1,4 @@
+import Map from "../components/Map";
 import Navbar from "../components/Navbar";
 
 const style = {
@@ -8,9 +9,10 @@ export default function Home() {
   return (
     <div>
       <div className={style.wrapper}>
-        {/* nav bar */}
         <Navbar />
-        <div className={style.main}>{/* map */}</div>
+        <div className={style.main}>
+          <Map></Map>
+        </div>
         <div className={style.rideRequestContainer}>
           <div className={style.rideRequest}>
             {/* location selector  */}
